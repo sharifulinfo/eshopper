@@ -15,6 +15,10 @@
 Route::get('/','ProductController@index');
 Route::get('/category/{id}','ProductController@categories');
 Route::get('/brand/{id}','ProductController@brands');
+Route::get('/productdeltail/{id}','ProductController@productdetail');
+
+//cart controller
+Route::post('addcart/','CartController@addcart')->name('addcart');
 
 
 

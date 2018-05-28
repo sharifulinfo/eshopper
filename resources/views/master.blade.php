@@ -141,11 +141,14 @@
                 </div>
             </div>
         </div><!--/header-bottom-->
-    </header><!--/header-->
-    
-@include('pages/inc/slider')
-    
-@include('pages.inc.sidebar')
+    </header><!--/header--> 
+    <section>
+        <div class="container">
+            <div class="row"> 
+                @yield('content')
+            </div>
+        </div>
+    </section>
     
     <footer id="footer"><!--Footer-->
         <div class="footer-top">

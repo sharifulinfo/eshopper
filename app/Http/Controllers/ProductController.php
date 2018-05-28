@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
      public function __construct(){
-        $this->middleware('auth')->except('index','categories','brands');
+        $this->middleware('auth')->except('index','categories','brands','productdetail');
     }
 
 
@@ -25,6 +25,11 @@ class ProductController extends Controller
     public function index(){
         $data['result'] = \App\Product::all();//paginate(); 
         return view('pages.content',$data);
+    }
+
+    public function productdetail($id){
+        $data['result'] = \App\Product::find($id);
+        return view('pages.productdetail',$data);
     }
 
 

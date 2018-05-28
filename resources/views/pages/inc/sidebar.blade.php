@@ -1,6 +1,4 @@
-    <section>
-        <div class="container">
-            <div class="row">
+
                 <div class="col-sm-3">
                     <div class="left-sidebar">
                         <h2>Category</h2>
@@ -72,7 +70,4 @@
                     </div>
                 </div>
                 
-                @yield('content')
-            </div>
-        </div>
-    </section>
+                
