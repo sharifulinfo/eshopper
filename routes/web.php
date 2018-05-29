@@ -19,6 +19,14 @@ Route::get('/productdeltail/{id}','ProductController@productdetail');
 
 //cart controller
 Route::post('addcart/','CartController@addcart')->name('addcart');
+Route::get('allcart/','CartController@allcart');
+Route::get('deletecart/{rowId}','CartController@deletecart');
+Route::post('updatecart/','CartController@updatecart')->name('updatecart');
+
+//Customer Controller
+Route::get('customerlogin/','CustomerController@login');
+Route::get('checkout/','CustomerController@checkout');
+Route::post('signup/','CustomerController@signup')->name('signup');
 
 
 

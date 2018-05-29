@@ -16,13 +16,18 @@
                             <img src="{{$row->product_img}}" alt="" width="260" height="240" />
                             <h2>${{$row->product_price}}</h2>
                             <p>{{$row->product_name}}</p>
-                            <a href="{{$row->id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                             
                         </div>
                         <div class="product-overlay">
                             <div class="overlay-content">
                                 <h2>${{$row->product_price}}</h2>
                             <p>{{$row->product_name}}</p>
-                            <a href="{{$row->id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            <form action="{{ route('addcart') }}" method="post">
+                                <input type="hidden" name="qnt" value="1">
+                                <input type="hidden" name="id" value="{{$row->id}}">
+                                <input type="submit" class="btn btn-default add-to-cart" name="submit" value="Add to cart">
+                               {{csrf_field()}}
+                            </form> 
                             </div>
                         </div>
                 </div>
