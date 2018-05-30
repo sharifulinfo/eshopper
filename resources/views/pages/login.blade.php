@@ -7,10 +7,12 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="email" placeholder="Email-Address" />
-							<input type="password" placeholder="password" /> 
-							<button type="submit" class="btn btn-default">Login</button>
+						<form action="{{ route('logincheck') }}" method="post">
+							<input type="email" placeholder="Email-Address" name="lemail" value="{{old('lemail')}}"/> <span class="text-danger">{{$errors->first('lemail')}}	</span>
+							<input type="password" placeholder="password"  name="lpassword" /> 
+							 <span class="text-danger">{{$errors->first('lpassword')}}</span>
+							{{csrf_field()}}
+							<button type="submit" class="btn btn-default" name="login">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -28,7 +30,7 @@
 							 <span class="text-danger">{{$errors->first('email')}}	</span>
 							<input type="password" placeholder="Password" name="password"/>
 							 <span class="text-danger">{{$errors->first('password')}}</span>
-							<button type="submit" class="btn btn-default">Signup</button>
+							<button type="submit" class="btn btn-default" name="signup">Signup</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>

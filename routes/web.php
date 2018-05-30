@@ -25,8 +25,14 @@ Route::post('updatecart/','CartController@updatecart')->name('updatecart');
 
 //Customer Controller
 Route::get('customerlogin/','CustomerController@login');
+Route::post('logincheck/','CustomerController@logincheck')->name('logincheck');
 Route::get('checkout/','CustomerController@checkout');
+Route::get('shipping/','CustomerController@shipping');
 Route::post('signup/','CustomerController@signup')->name('signup');
+
+//shipment Controller
+Route::post('addshipment','ShipmentController@addship')->name('addshipment');
+Route::post('updateshipment','ShipmentController@updateship')->name('updateshipment');
 
 
 
