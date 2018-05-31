@@ -25,6 +25,7 @@ Route::post('updatecart/','CartController@updatecart')->name('updatecart');
 
 //Customer Controller
 Route::get('customerlogin/','CustomerController@login');
+Route::get('customerlogout/','CustomerController@logout');
 Route::post('logincheck/','CustomerController@logincheck')->name('logincheck');
 Route::get('checkout/','CustomerController@checkout');
 Route::get('shipping/','CustomerController@shipping');
@@ -90,6 +91,10 @@ Route::any('/storeslider','SliderController@storeslider')->name('storeslider');
 Route::get('/editslider/{id}','SliderController@editslider');
 Route::any('/updateslider','SliderController@updateslider')->name('updateslider');
 Route::get('/deleteslider/{id}','SliderController@deleteslider');
+
+
+Route::get('/allorder','OrderController@allorder');
+Route::get('/orderdetail/{id}','OrderController@orderdetail');
 
 
 

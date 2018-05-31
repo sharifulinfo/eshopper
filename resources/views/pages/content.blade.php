@@ -3,6 +3,12 @@
 
 @include('pages/inc/slider') 
 @include('pages.inc.sidebar')
+@if (session('msg'))
+                <div class="alert alert-success">
+                    {{ session('msg') }}
+                </div>
+            @endif
+
 
 <div class="col-sm-9 padding-right">
     <div class="features_items"><!--features_items-->

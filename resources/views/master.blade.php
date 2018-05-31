@@ -89,8 +89,12 @@
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="{{url('customerlogin/')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="{{url('allcart')}}"><i class="fa fa-shopping-cart"></i> Cart ({{Cart::count()}})</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="{{url('allcart')}}"><i class="fa fa-shopping-cart"></i> Cart ({{Cart::count()}})</a></li> 
+                                @if (session()->get('customer_id') == '') 
+                                <li><a href="{{url('customerlogin/')}}"><i class="fa fa-lock"></i> Login</a></li>
+                                @else
+                                <li><a href="{{url('customerlogout/')}}"><i class="fa fa-lock"></i> Logout</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -119,7 +123,11 @@
                                         <li><a href="product-details.html">Product Details</a></li> 
                                         <li><a href="checkout.html">Checkout</a></li> 
                                         <li><a href="{{url('allcart')}}">Cart ({{Cart::count()}})</a></li> 
-                                        <li><a href="login.html">Login</a></li> 
+                                        @if (session()->get('customer_id') == '') 
+                                        <li><a href="{{url('customerlogin/')}}">Login</a></li>
+                                        @else
+                                        <li><a href="{{url('customerlogout/')}}">Logout</a></li>
+                                        @endif 
                                     </ul>
                                 </li> 
                                 <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

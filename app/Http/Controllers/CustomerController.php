@@ -8,7 +8,7 @@ class CustomerController extends Controller
 {
     public function login(){
     	if(session()->get('customer_id') == ''){
-    		return redirect('customerlogin');
+    		return view('pages.login');
     	}
     	return view('pages.checkout');
     }
@@ -60,7 +60,8 @@ class CustomerController extends Controller
     	return view('pages.checkout');
     } 
 
-    // public function checkout(){
-    // 	return view('pages.checkout');
-    // }
+    public function logout(){
+        session()->forget(['customer_id','customer_name','customer_email']);
+        return redirect ('/');
+    }
 }

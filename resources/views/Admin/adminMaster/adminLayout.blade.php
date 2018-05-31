@@ -108,6 +108,11 @@
 												 <li><a href="{{url('/allslider')}}">All sliders</a></li>  
 											  </ul>
 										   </li>
+										   <li class="has-sub"><a class="product" href='#'><i class="fa fa-th-large"></i> <span>Manage Orders</span></a>
+											  <ul class="sub-ul">
+												 <li><a href="{{url('/allorder')}}">All Orders</a></li>
+											  </ul>
+										   </li>
 										   
 										   <li class="last"><a class="contact-menu" href="#">Contact Info</a></li>
 										   <li class="last"><a class="contact-menu" href="#">Social Link</a></li>
